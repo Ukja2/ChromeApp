@@ -40,7 +40,7 @@ const quotes = [
     quote: '“실패가 두려운 자는 성공할 자격이 없다.”',
     author: '찰스 바클리'
     },
-    ];
+];
 
 
 const quote = document.querySelector("#quote span:first-child");
