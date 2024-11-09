@@ -1,44 +1,44 @@
 
 const quotes = [
     {
-    quote: 'I never dreamed about success, I worked for it',
-    author: 'Estee Lauder'
+    quote: '교육은 세상을 바꿀 수 있는 가장 강력한 무기이다.',
+    author: '넬슨 만델라'
     },
     {
-    quote: 'Do not try to be original, just try to be good.',
-    author: 'Paul Rand'
+    quote: '가장 불만에 가득 찬 고객은 가장 위대한 배움의 원천이다.',
+    author: '빌 게이츠'
     },
     {
-    quote: 'Do not be afraid to give up the good to go for the great',
-    author: 'John D. Rockefeller'
+    quote: '안 하고 죽어도 좋은 일만 내일로 미뤄라.',
+    author: '파블로 피카소'
     },
     {
-    quote: 'If you cannot fly then run. If you cannot run, then walk. And if you cannot walk, then crawl, but whatever you do, you have to keep moving forward.',
-    author: 'Martin Luther King Jr.'
+    quote: '미래는 현재 우리가 무엇을 하고 있는가에 달려있다.',
+    author: '마하마트 간디'
     },
     {
-    quote: 'Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.',
-    author: 'Thomas Edison'
+    quote: '두려워 해야 할 것은 오직 하나, 두려움을 모르는 전사가 되는 것.',
+    author: '호메로스'
     },
     {
-    quote: 'The fastest way to change yourself is to hang out with people who are already the way you want to be',
-    author: 'REid Hoffman'
+    quote: '확신하는 정의는 악이다. 정의가 정의이기 위해서는 늘 자신의 정의를 끝없이 의심하지 않으면 안된다.',
+    author: '마이크 센델'
     },
     {
-    quote: 'Money is like gasoline during a road trip. You do not want to run out of gas on your trip, but you are not doing a tour of gas stations',
-    author: 'Tim O Reilly'
+    quote: '수인 이세계에 갔을 때 털 없는 고릴라로 보일 수 있기 위해 운동을 시작했다. 단지 그 뿐이다',
+    author: '로니 콜먼'
     },
     {
-    quote: 'Some people dream of success, while other people get up every morning and make it happen',
-    author: 'Wayne Huizenga'
+    quote: '모든 사람이 탐욕스럽게 되면 나는 두려워진다. 그러나 모두가 두려워하게 되는 순간 나는 탐욕스러워진다.',
+    author: '워렌 버핏'
     },
     {
-    quote: 'The only thing worse than starting something and falling.. is not starting something',
-    author: 'SEth Godin'
+    quote: '몸을 만들고 싶으면 말로 떠들지 말고, 30분이라도 체육관을 가서 몸으로 떠들어라',
+    author: '제이슨 스타뎀'
     },
     {
-    quote: 'If you really want to do something, you will find a way. If you do not, you will find an excuse.',
-    author: 'Jim Rohn'
+    quote: '“실패가 두려운 자는 성공할 자격이 없다.”',
+    author: '찰스 바클리'
     },
     ];
 
