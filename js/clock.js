@@ -4,11 +4,9 @@ function sayHello(){
     console.log("hello")
 }
 
-
 /*
-setInterval: 일정 시간 간격마다 지정한 작업을 반복적으로 실행하는 함수
-setInterval(fucntion, delay)의 형태로 
-function: 주기적으로 실행할 함수 또는 코드 지정
-delay: 반복 주기를 밀리초(1초 = 1000ms) 단위로 지정
-*/
-setInterval(sayHello, 5000); 
+ssetInterval과 비슷한 형태를 띠지만 약간의 차이가 있다.
+setTimeout은 특정 시간 이후에 작업을 한 번만 실행하므로, 
+반복이 필요하다면 setInterval을, 일회성 지연 실행이 필요할 때는 setTimeout을 사용할 수 있다.
+ */
+setTimeout(sayHello, 5000)
