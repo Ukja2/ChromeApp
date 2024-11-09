@@ -5,7 +5,12 @@ const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos"
 
 //Todolist가 저장된 배열
-const toDos = [];
+/*빈 배열로 시작하며 입력된 값은 로컬저장소로 저장된다. 이때의 값들은 새로고침을 해도 로컬저장소에 남아있는데.
+여기서 만약 const로 선언되어 있으면 새로고침 후 빈 배열에 새로운 todo를 작성해도 이전값이 업데이트 되지 않은 채 새로운 값들이 덮어쓰기 된다.
+그렇기에 let으로 선언 후 아래 조건문처럼 toDos 배열에 로컬저장소에 저장되어있던 이전 배열값들을 저장해야 된다.
+*/
+
+let toDos = [];
 
 function saveToDos() {
     //JSON.stringify : js의 객체나 배열같은 값을 문자열 형태로 변환시켜주는 메서드
@@ -42,7 +47,7 @@ function handleToDoSubmit(event) {
     toDoInput.value = ""
     toDos.push(newTodo) //Todolist를 배열에 저장
     paintToDo(newTodo)//목록 생성 함수 호출
-    saveToDos();
+    saveToDos(); //배열에 저장된 Todolist들을 문자열로 변환 후 로컬저장소에 저장
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
@@ -50,11 +55,14 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY)
 
+
+//페이지가 새로고침되고 실행될 조건문 즉 새로고침되어도 기존의 Todolist가 사라지지 않게 하기위함
 if(savedToDos !== null){
     //문자열 형태로 변환된 배열이나 객체를 원래의 형태로 복원하기 위해 사용한다.
     const parsedToDos = JSON.parse(savedToDos);
-
-    //forEach: 배열을 순회하며 각각의 요소에 대해 지정된 작업을 실행하는 메서드임
-    //화살표 함수로 나타낼 수 있으며, 이는 일반적으로 만드는 함수와 같은 형태로 fucntion, 함수명 등을 적지 않아도 되기에 편리하다.
-    parsedToDos.forEach(item => console.log("this is the turn of", item ) );
+    toDos = parsedToDos;
+    //로컬스토리지에 todo가 있으면 toDos에 parsedToDos를 넣어 이전에 저장되어 있던 모든 todo들을 복원할 수 있다.
+    //이렇게 하면 새로고침 후 새로운 todo를 작성해도 
+    
+    parsedToDos.forEach(paintToDo);
 }
