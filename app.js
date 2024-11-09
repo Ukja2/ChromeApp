@@ -27,7 +27,7 @@ function onLoginSubmit(event){
 
 //로그인 후 사용자 정보 표현 함수
 function paintGreeting(username){ 
-    greeting.innerText = `Hello ${username}`;
+    greeting.innerText = `Hello ${username}`; //비어있는 h1에 텍스트 추가
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
