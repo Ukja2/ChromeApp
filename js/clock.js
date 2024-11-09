@@ -1,12 +1,11 @@
 const clock = document.querySelector("h2#clock");
 
-function sayHello(){
-    console.log("hello")
+function getClock(){
+    const date = new Date();
+    clock.innerText = (`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+
 }
 
-/*
-ssetInterval과 비슷한 형태를 띠지만 약간의 차이가 있다.
-setTimeout은 특정 시간 이후에 작업을 한 번만 실행하므로, 
-반복이 필요하다면 setInterval을, 일회성 지연 실행이 필요할 때는 setTimeout을 사용할 수 있다.
- */
-setTimeout(sayHello, 5000)
+//함수를 호출함으로써 사아트가 load되자마자 getClock()을 실행하고 이후 매초마다 실행되도록
+getClock() //해당 함수가 없으면 사이트 실행시 00:00:00의 형태가 나타나고 1초뒤 Interval이 실행됨
+setInterval(getClock, 1000);
