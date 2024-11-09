@@ -9,7 +9,7 @@ const USERNAME_KEY = "username";
 //onLoginSubmit 함수가 호출될 때, 브라우저는 발생한 이벤트에 대한 정보를 담은 event 객체를 자동으로 만들어 함수의 첫 번째 매개변수로 전달함 
 function onLoginSubmit(event){ 
     
-    //html의 form은 submit을 하면 브라우저의 기본 동작인 새로고침을 하는데 이를 막아주는 함수 이를 통해 submit을 할때마다 새로고침 되는 현상을 예방할 수 있음
+    //html의 form은 submit을 하면 브라우저의 기본 동작인 새로고침을 하는데 이를 막아주는 함수, 이를 통해 submit을 할때마다 새로고침 되는 현상을 예방할 수 있음
     //event 함수는 preventDefault 함수를 기본적으로 갖고 있음
     event.preventDefault(); 
 
@@ -21,7 +21,6 @@ function onLoginSubmit(event){
     //username에 Ukja2를 넣으면 Storage에 key는 username value는 Ukja2와 같은 형태로 저장됨
     localStorage.setItem(USERNAME_KEY, username);
     
-    
     paintGreeting(username);
     }
 
@@ -30,7 +29,6 @@ function paintGreeting(username){
     greeting.innerText = `Hello ${username}`; //비어있는 h1에 텍스트 추가
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
-
 
 
 const savedUsername = localStorage.getItem(USERNAME_KEY); //username 키에 저장된 값을 불러옴
