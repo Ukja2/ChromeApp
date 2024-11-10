@@ -28,7 +28,7 @@ function onLoginSubmit(event){
 //로그인 후 사용자 정보 표현 함수
 function paintGreeting(username){ 
     greeting.innerText = `안녕하세요 ${username}님!`; //비어있는 h1에 텍스트 추가
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.classList.remove(HIDDEN_CLASSNAME); //로그인을 하면 투두리스트 입력창 생성
 }
 
 

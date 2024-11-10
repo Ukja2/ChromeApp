@@ -72,11 +72,11 @@ function handleToDoSubmit(event) {
         text : newTodo,
         id : Date.now()
     } //각 todo들에게 ID를 만들어 줄 수 있도록 객체생성 => 같은 이름이어도 id가 다른 객체로 분류됨
+
     toDos.push(newTodoObj) //Todolist를 배열에 저장
     paintToDo(newTodoObj)//목록 생성 함수 호출
     saveToDos(); //배열에 저장된 Todolist들을 문자열로 변환 후 로컬저장소에 저장
     
-
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
@@ -96,6 +96,7 @@ if(savedToDos !== null){
     parsedToDos.forEach(paintToDo);
 }
 
+//새로고침 했을 때 로그인이 되어있으면 투두리스트 입력창이 유지되도록
 if(savedUsername === null){ 
     loginForm.addEventListener("submit" , onLoginSubmit);
 } else {
