@@ -7,31 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 id="clock">00:00:00</h2>
-    <form class="hidden" id="login-form" >
-        <input type="text" 
-        placeholder="What is your name?" 
-        maxlength="15"
-        required>
-        <input type="submit" value="Log In">
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    
-    <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" required>
-    </form>
+    <div id="main">
+        <h2 id="clock">00:00:00</h2>
+        <form class="hidden" id="login-form" >
+            <input type="text" 
+            id="name-form"
+            placeholder="이름을 입력해주세요!" 
+            maxlength="15"
+            required>
+            <input type="submit" value="Log In" id="login-button" class="hidden">
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
+        
+        <form id="todo-form" class="hidden">
+            <input id="todo-form-text" type="text" placeholder="오늘 할 일을 알려주세요!" required>
+        </form>
 
-    <ul id="todo-list"></ul>
 
-    <div id="quote">
-        <span></span>
-        <span></span>
+        <div id="quote">
+            <span id="quote-quote"></span>
+            <span id="quote-author"></span>
+        </div>
+
+        <div id="weather">
+            <span ></span>
+            <span></span>
+        </div>
     </div>
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
-    
+
+    <ul id="todo-list">
+        <div id="subject">ToDoList</div>
+    </ul>
+
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>

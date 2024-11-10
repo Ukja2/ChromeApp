@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url("https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css");
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -30,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	overflow: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -50,9 +48,120 @@ table {
     display: none;
 }
 
+
+/*배경화면 스타일*/
 .bg-image {
-    width: 100%;  /* 화면 너비에 맞춤 */
-    height: 100vh; /* 화면 높이에 맞춤 */
-    
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* 이미지의 비율을 유지하면서 화면을 꽉 채우도록 */
+	z-index: -1; /* 다른 요소들이 이미지 위에 표시되도록 함 */
+
   }
-  
+
+#main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
+}
+
+h2#clock{
+	
+	font-family: "Galmuri9", sans-serif;
+	font-size: 100px;
+	color: white;
+	padding: 50px;
+	margin-top: 100px;
+
+}
+
+#login-form{
+	padding: 40px;
+}
+
+#name-form{
+	font-family: "Galmuri11", sans-serif;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	border-bottom: 1.5px solid white;
+	width: 300px;
+	height: 100px;
+	color: white;
+	font-size: 30px;
+	padding: 0px 50px;
+	
+
+}
+#name-form::placeholder{
+	font-size: 30px;
+	text-align: center;
+}
+
+#greeting{
+	font-family: "Galmuri11", sans-serif;
+	color: white;
+	font-size: 40px;
+	margin: 30px 0px;
+}
+
+#todo-form-text{
+	font-family: "Galmuri11", sans-serif;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	border-bottom: 1.5px solid white;
+	width: 300px;
+	height: 60px;
+	color: white;
+	font-size: 20px;
+	padding: 0px 50px;
+}
+#todo-form-text::placeholder{
+
+	font-size: 25px;
+	text-align: center;
+}
+
+#quote{
+	position: relative;
+	top: 280px;
+	font-family: "Galmuri11", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	margin-top: 100px;
+}
+
+#quote-quote{
+	margin-bottom: 10px;
+}
+
+#todo-list{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 1px solid white;
+	width: 250px;
+	height: 296px;
+}
+
+.todostyle{
+	font-family: "Galmuri11", sans-serif;
+	color: white;
+	padding: 7px;
+}
+.buttonstyle{
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	color: white;
+	font-size: 20px;
+}
+#subject{
+	font-family: "Galmuri11", sans-serif;
+	color: white;
+	margin-bottom: 10px;
+}

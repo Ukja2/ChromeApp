@@ -3,6 +3,7 @@ const toDoInput = toDoForm.querySelector("input") // === const toDoInput = docum
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos"
+const MAX_TODO_COUNT = 6 ; // 최대 투두 항목 개수
 
 //Todolist가 저장된 배열
 /*빈 배열로 시작하며 입력된 값은 로컬저장소로 저장된다. 이때의 값들은 새로고침을 해도 로컬저장소에 남아있는데.
@@ -42,12 +43,16 @@ function paintToDo(newTodo){
     const span = document.createElement("span"); //html에 spon 요소 생성
     span.innerText = newTodo.text; //사용자로부터 입력받은 값을 텍스트에 저장, newTodoObj 객체의 text를 입력하기 때문에 .text로 작성
     const button = document.createElement("button");
-    button.innerText ="❌";
+    button.innerText ="✖";
     button.addEventListener("click",deleteToDo); //삭제 함수 호출
 
     //append는 맨 마지막에 위치해야 한다.
     li.appendChild(span); // span은 li 요소 내부에 위치하게 됨
+    li.classList.add("todostyle")
+    
     li.appendChild(button)
+    button.classList.add("buttonstyle")
+    
     toDoList.appendChild(li)
 }
 
@@ -56,6 +61,13 @@ function handleToDoSubmit(event) {
     event.preventDefault()
     const newTodo = toDoInput.value;
     toDoInput.value = ""
+
+    if (toDos.length >= MAX_TODO_COUNT) {
+        alert(`최대 ${MAX_TODO_COUNT}개의 할 일을 입력할 수 있습니다.`);
+        return; // 최대 개수에 도달하면 더 이상 추가하지 않음
+    }
+
+
     const newTodoObj = {
         text : newTodo,
         id : Date.now()
@@ -63,6 +75,8 @@ function handleToDoSubmit(event) {
     toDos.push(newTodoObj) //Todolist를 배열에 저장
     paintToDo(newTodoObj)//목록 생성 함수 호출
     saveToDos(); //배열에 저장된 Todolist들을 문자열로 변환 후 로컬저장소에 저장
+    
+
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
@@ -82,4 +96,9 @@ if(savedToDos !== null){
     parsedToDos.forEach(paintToDo);
 }
 
-     
+if(savedUsername === null){ 
+    loginForm.addEventListener("submit" , onLoginSubmit);
+} else {
+    toDoForm.classList.remove(HIDDEN_CLASSNAME);
+    
+}
