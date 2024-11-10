@@ -21,8 +21,18 @@ function saveToDos() {
 
 //ToDolist 삭제
 function deleteToDo(event){
-    const li = event.target.parentElement; //이벤트가 발생했을 때, 해당 객체를 지정, 그것의 부모 태그를 지정
-    li.remove(); //위에서 지정된 요소를 삭제
+    //이벤트가 발생했을 때, 해당 객체를 지정, 그것의 부모 태그를 지정
+    const li = event.target.parentElement; 
+
+     //위에서 지정된 요소를 삭제
+    li.remove();
+
+    //filter : 입력된 배열에서 특정 값을 없애기 위한 메사드, forEach와 비슷함, 반드시 True 또는 False의 형태로 반환되어야함
+    //li의 id는 string, todo.id는 number이기 때문에 조건이 성립되지 않는다. parseInt를 통해 li.id를 number형태로 변환해야됨
+    toDos = toDos.filter((todo) => todo.id !== parseInt(li.id)); 
+    
+    //리스트를 다시 배열에 저장
+    saveToDos();
 }
 
 //ToDolist 목록 생성
@@ -71,3 +81,5 @@ if(savedToDos !== null){
     
     parsedToDos.forEach(paintToDo);
 }
+
+     
