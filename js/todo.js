@@ -28,11 +28,12 @@ function deleteToDo(event){
 //ToDolist 목록 생성
 function paintToDo(newTodo){
     const li = document.createElement("li"); //html에 li요소 생성
+    li.id = newTodo.id; //li에 id 입력
     const span = document.createElement("span"); //html에 spon 요소 생성
-    span.innerText = newTodo; //사용자로부터 입력받은 값을 텍스트에 저장
-    const button = document.createElement("button")
-    button.innerText ="❌"
-    button.addEventListener("click",deleteToDo) //삭제 함수 호출
+    span.innerText = newTodo.text; //사용자로부터 입력받은 값을 텍스트에 저장, newTodoObj 객체의 text를 입력하기 때문에 .text로 작성
+    const button = document.createElement("button");
+    button.innerText ="❌";
+    button.addEventListener("click",deleteToDo); //삭제 함수 호출
 
     //append는 맨 마지막에 위치해야 한다.
     li.appendChild(span); // span은 li 요소 내부에 위치하게 됨
@@ -45,8 +46,12 @@ function handleToDoSubmit(event) {
     event.preventDefault()
     const newTodo = toDoInput.value;
     toDoInput.value = ""
-    toDos.push(newTodo) //Todolist를 배열에 저장
-    paintToDo(newTodo)//목록 생성 함수 호출
+    const newTodoObj = {
+        text : newTodo,
+        id : Date.now()
+    } //각 todo들에게 ID를 만들어 줄 수 있도록 객체생성 => 같은 이름이어도 id가 다른 객체로 분류됨
+    toDos.push(newTodoObj) //Todolist를 배열에 저장
+    paintToDo(newTodoObj)//목록 생성 함수 호출
     saveToDos(); //배열에 저장된 Todolist들을 문자열로 변환 후 로컬저장소에 저장
 }
 
